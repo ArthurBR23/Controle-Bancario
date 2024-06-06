@@ -12,8 +12,6 @@ namespace SistemaFinanceiro.Model
         private long _numero;
         public decimal _saldo;
         private Cliente _titular;
-
-        public Agencia agencia;
         public Cliente cliente;
         
 
