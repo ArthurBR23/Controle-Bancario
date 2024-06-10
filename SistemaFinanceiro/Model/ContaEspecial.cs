@@ -8,7 +8,6 @@ namespace SistemaFinanceiro.Model
 {
     public class ContaEspecial
     {
-        private double _limite;
         public Conta _saque;
         public Conta _transferencia;
 

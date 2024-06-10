@@ -2,6 +2,7 @@
 using SistemaFinanceiro.Model;
 using static SistemaFinanceiro.Model.Conta;
 using static SistemaFinanceiro.Model.ContaCorrente;
+using static SistemaFinanceiro.Model.ContaEspecial;
 
 public class Program
 {
@@ -46,7 +47,7 @@ public class Program
         }
         
        
-        //Cliente 3
+        //Cliente 3 Conta Corrente
         var cliente3 = new Cliente("Rosenclever","12345678902", 2001);
         Console.WriteLine($"Nome: {cliente3.Nome}, CPF: {cliente3.CPF}, Ano de Nascimento: {cliente3.AnoNascimento}");
 
@@ -57,5 +58,17 @@ public class Program
         Console.WriteLine($"Saldo após depósito: R$ {contaCaixinha.Saldo}");
         contaCaixinha.Saque(700);
         Console.WriteLine($"Saldo após saque: R$ {contaCaixinha.Saldo}");
+
+        //Cliente 4 Conta Especial
+        var cliente4 = new Cliente("Ana", "12345678903", 1980);
+        Console.WriteLine($"Nome: {cliente4.Nome}, CPF: {cliente4.CPF}, Ano de Nascimento: {cliente4.AnoNascimento}");
+
+        var contaEspecial = new contaEspecial(890, 2500, cliente4);
+        Console.WriteLine($"Cliente: {cliente4.Nome}, Conta: {contaEspecial.Numero}, Saldo: R$:{contaEspecial.Saldo}");
+
+        contaEspecial.Deposito(300);
+        Console.WriteLine($"Saldo após depósito: R$ {contaEspecial.Saldo}");
+        contaEspecial.Saque(700);
+        Console.WriteLine($"Saldo após saque: R$ {contaEspecial.Saldo}");
     }
 }
